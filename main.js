@@ -34,7 +34,7 @@ class Player {
             score: 0,
             difficulty: 0,
         }
-        Object.assign(def, args);
+        //Object.assign(def, args);
         Object.assign(this, def);
         // this.catch();
     }
