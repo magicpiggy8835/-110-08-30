@@ -44,18 +44,23 @@
 <body align="center">
     <table style="margin:auto" id="table">
         <tr>
-            <td><img src="start.jpg" onclick='$("#drawplace").show();$("#back").show();init();pause = 0;$("#table").hide();$("#dailog").dialog("close");$("#tyy_now").dialog("close");$("#text").dialog("close");' id="star" alt=""></td>
+            <td>
+                <img src="start.jpg" onclick='$("#drawplace").show();$("#back").show();init();pause = 0;$("#table").hide();$("#title").hide();
+                $("#dailog").dialog("close");$("#tyy_now").dialog("close");$("#text").dialog("close");' id="star" alt="">
+            </td>
             <td><img src="ddd.png" onclick='$("#tyy_now").dialog("open")' id="try" alt=""></td>
         </tr>
     </table>
     
     
     <canvas id="drawplace"></canvas>
+    <img src="標題畫面.png" id="title">
     <img src="gameover.jpg" id="over" onclick="$('#drawplace').show();init();
     $('#table').hide();
     $('#over').hide();
+    //$('#title').show();
     $('#back').show()" alt="">
-    <br><img src="back.jpg" id="back" onclick='$("#back").hide();pause = 1;$("#drawplace").hide();$("#table").show();' alt="">
+    <br><img src="back.jpg" id="back" onclick='$("#back").hide();$("#title").show();pause = 1;$("#drawplace").hide();$("#table").show();' alt="">
     <div id="tyy_now">
         <button onclick='$("#dailog").dialog("open")'>難度</button>
         <button onclick='$("#text").dialog("open")'>說明</button>
@@ -73,7 +78,8 @@
     </div>
     <div id="dailog" title="俄羅斯方塊">
         <button  style="right: 0;position: absolute" class="ui-button ui-corner-all ui-widget"
-            onclick="$('#back').show();init();$('#dailog').dialog('close');$('#tyy_now').dialog('close');$('#text').dialog('close');$('#drawplace').show();$('#table').hide();">Start</button>
+            onclick="$('#back').show();init();$('#dailog').dialog('close');$('#tyy_now').dialog('close');$('#text').dialog('close');$('#title').hide();
+            $('#drawplace').show();$('#table').hide();">Start</button>
     </div>
 </body>
 <script>
