@@ -11,7 +11,7 @@
 </head>
 <style>
     body{
-        background-color:black;
+        background-color:rgb(148, 153, 226);
     }
     canvas{
         height:85vh;
@@ -45,7 +45,7 @@
     <table style="margin:auto" id="table">
         <tr>
             <td>
-                <img src="start.jpg" onclick='$("#drawplace").show();$("#back").show();init();pause = 0;$("#table").hide();$("#title").hide();
+                <img src="start.png" onclick='$("#drawplace").show();$("#back").show();init();pause = 0;$("#table").hide();$("#title").hide();
                 $("#dailog").dialog("close");$("#tyy_now").dialog("close");$("#text").dialog("close");' id="star" alt="">
             </td>
             <td><img src="ddd.png" onclick='$("#tyy_now").dialog("open")' id="try" alt=""></td>
@@ -60,7 +60,7 @@
     $('#over').hide();
     //$('#title').show();
     $('#back').show()" alt="">
-    <br><img src="back.jpg" id="back" onclick='$("#back").hide();$("#title").show();pause = 1;$("#drawplace").hide();$("#table").show();' alt="">
+    <br><img src="back.png" id="back" onclick='$("#back").hide();$("#title").show();pause = 1;$("#drawplace").hide();$("#table").show();' alt="">
     <div id="tyy_now">
         <button onclick='$("#dailog").dialog("open")'>難度</button>
         <button onclick='$("#text").dialog("open")'>說明</button>
@@ -75,6 +75,8 @@
         按"右"往右移動<br>
         按"空白"放下<br>
         按"B"使用炸彈<br>
+        前3000分中，每得到1000分方塊下落速度會加快<br>
+        前五分鐘，每一分鐘會增加一層障礙<br>
     </div>
     <div id="dailog" title="俄羅斯方塊">
         <button  style="right: 0;position: absolute" class="ui-button ui-corner-all ui-widget"
@@ -94,7 +96,7 @@
     $("#text").dialog({
         autoOpen:false,
         height:300,
-        width:300,
+        width:500,
     });
     $("#dailog").dialog({
         height:200,
