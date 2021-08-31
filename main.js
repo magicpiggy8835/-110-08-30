@@ -11,7 +11,7 @@ class Screen {
             span: 40,
             gui: 10,
         }
-        Object.assign(def, args);
+        //Object.assign(def, args);
         Object.assign(this, def);
     }
     draw() {
@@ -348,6 +348,8 @@ function decoration(x, y, colors) {
 
     ctx.translate(x * screen.span, y * screen.span);
     ctx.fillStyle = `rgb(${colors[0]},${colors[1]},${colors[2]})`;
+    /*ctx.shadowColor = `rgb(${colors[0]}, ${colors[1]+10}, ${colors[2]})`;
+    ctx.shadowBlur = 10 ;*/
     ctx.fillRect(0, 0, screen.span, screen.span);
 
     if (map[y][x] === 9 || map[y][x] === 10) {
