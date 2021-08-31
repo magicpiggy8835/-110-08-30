@@ -51,6 +51,11 @@ class Player {
             $('#table').hide();
             $("#over").show();
             $("#back").hide();
+            ctx.save();
+
+            ctx.fillText
+
+            ctx.restore();
             pause = 1;
         }
         if(this.score === 1000 && speed === 0){
@@ -141,7 +146,11 @@ class Player {
                     }
                     i++;
                     this.score += 100;
-                    
+                    /*if(this.score === 5000 && win === false){
+                        win = true;
+                        pause = 1;
+                        alert("You win !\nPress p if you want to continue playing");
+                    }*/
                 }
             }
             used = 0;
@@ -226,7 +235,7 @@ let colortypes = [
     [255, 255, 255],
     [255, 0, 0],
     [0, 255, 0],
-    [0, 0, 255],
+    [247, 0, 255],
     [0, 100, 200],
     [200, 100, 0],
     [0, 255, 255],
@@ -364,7 +373,8 @@ function decoration(x, y, colors) {
         ctx.translate((degree % 270 === 0) ? 0 : screen.span, (degree < 180) ? 0 : screen.span);
         ctx.rotate(degree * Math.PI / 180);
         ctx.beginPath();
-        let w = 5;
+        let w = 2;
+        if(map[y][x] === 0 || map[y][x] === 8) w = 0;
         ctx.moveTo(0, 0);
         ctx.lineTo(w, w);
         ctx.lineTo(screen.span - w, w);
@@ -382,6 +392,7 @@ function sa(i) {
 let time;
 let speed = 0;
 let difficulty = 0;
+let win = false;
 function ddown() {
     if (map.length !== 0) player.down();
     setTimeout(ddown, time);
